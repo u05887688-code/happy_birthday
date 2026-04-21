@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <section id="step1" class="page active">
+            <h1>Happy Birthday, Riddhi</h1>
+            <p>A cinematic journey created just for you</p>
+            <button onclick="nextStep(2)">OPEN YOUR GIFT</button>
+        </section>
+
+        <section id="step2" class="page">
+            <div class="card">
+                <h2>It's Your Special Day</h2>
+                <button onclick="nextStep(3)">NEXT</button>
+            </div>
+        </section>
+
+        <section id="step3" class="page">
+            <div class="message-box">
+                <h2>My Dearest Riddhi,</h2>
+                <p>Today isn't just a date on the calendar; it's a celebration of the light you bring into my life...</p>
+                <button onclick="location.reload()">REPLAY THE MAGIC</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
