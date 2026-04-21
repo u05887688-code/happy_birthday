@@ -13,51 +13,39 @@
     </audio>
 
     <div class="container">
-<audio id="birthdaySong" preload="auto" loop>
-    <source src="jbl.mp3" type="audio/mpeg">
-</audio>
+        <section id="step1" class="page active">
+            <h1 class="glow-text">Happy Birthday, Jeevi</h1>
+            <p>A cinematic journey created just for you</p>
+            <button onclick="nextStep(2)">OPEN YOUR GIFT</button>
+        </section>
 
-<div class="container">
-    ```
+        <section id="step2" class="page">
+            <div class="card">
+                <h2>Music makes it better...</h2>
+                <button onclick="startMusic()">PLAY MUSIC</button>
+            </div>
+        </section>
 
-### Why it’s not working right now:
-* **The Tag is Missing:** Your JavaScript looks for an element with the ID `birthdaySong`, but since it's not in your HTML, the `startMusic()` function can't find anything to play.
-* **Case Sensitivity:** Make sure the file you uploaded is named exactly `jbl.mp3` in all lowercase. If it is `JBL.mp3` on GitHub, you must change the code to match.
+        <section id="step3" class="page">
+            <h2 class="glow-text">Moments in Time</h2>
+            <div class="photo-grid">
+                <img src="img1.jpg" alt="Moment 1">
+                <img src="img2.jpg" alt="Moment 2">
+                <img src="img3.jpg" alt="Moment 3">
+                <img src="img4.jpg" alt="Moment 4">
+            </div>
+            <button onclick="nextStep(4)">CONTINUE</button>
+        </section>
 
-### One final check:
-In your screenshot at **Line 3**, the text says "Happy Birthday, jeevi". Make sure that's what you want! If you wanted it to say "Riddhi" like before, you can change that name while you are adding the audio tag.
+        <section id="step4" class="page">
+            <div class="message-box">
+                <h2>My Dearest Jeevi,</h2>
+                <p>May your day be as beautiful as your smile. Nin dream ella ev year success agli, once again happy birthday madamji...</p>
+                <button onclick="location.reload()">REPLAY THE MAGIC</button>
+            </div>
+        </section>
+    </div>
 
-**Add that tag at the very top, commit the changes, and the music should start working!**
-<div class="container">
-    <section id="step1" class="page active">
-        <h1 class="glow-text">Happy Birthday, jeevi</h1>
-        <p>A cinematic journey created just for you</p>
-        <button onclick="nextStep(2)">OPEN YOUR GIFT</button>
-    </section>
-
-    <section id="step2" class="page">
-        <div class="card">
-            <h2>Music makes it better...</h2>
-            <button onclick="startMusic()">PLAY MUSIC</button>
-        </div>
-    </section>
-
-    <section id="step3" class="page">
-        <h2 class="glow-text">Moments in Time</h2>
-        <div class="photo-grid">
-            <img src="img1.jpg">
-            <img src="img2.jpg">
-            <img src="img3.jpg">
-            <img src="img4.jpg">
-        </div>
-        <button onclick="nextStep(4)">CONTINUE</button>
-    </section>
-
-    <section id="step4" class="page">
-        <div class="message-box">
-            <h2>My Dearest jeevi,</h2>
-            <p>May your day be as beautiful as your smile, nin dream ella ev year success agli, once again happy birthday madamji.....</p>
-            <button onclick="location.reload()">REPLAY THE MAGIC</button>
-        </div>
-    </section>
-</div>
+    <script src="script.js"></script>
+</body>
+</html>
