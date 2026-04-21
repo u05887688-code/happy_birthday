@@ -15,16 +15,13 @@ function nextStep(stepNumber) {
 function startMusic() {
     const audio = document.getElementById('birthdaySong');
     if (audio) {
-        audio.load(); // Force the browser to find the file
+        // This 'plays' the jbl.mp3 file
         audio.play().then(() => {
-            console.log("Playing!");
+            console.log("Music is playing!");
         }).catch(err => {
-            console.log("Error playing audio:", err);
-            // If it fails, we still move to the next page
+            console.log("Audio error: ", err);
         });
     }
-    nextStep(3); // Moves to the photos page
-}
 
     // Automatically move to the next step (The Photos)
     nextStep(3);
