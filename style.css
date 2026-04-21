@@ -1,32 +1,4 @@
-.photo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    gap: 15px;
-    max-width: 600px;
-    margin: 20px auto;
-}
-
-.photo-grid img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover; /* Keeps faces from looking stretched */
-    border-radius: 10px;
-    border: 2px solid rgba(255, 77, 109, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.photo-grid img:hover {
-    transform: scale(1.1);
-    border-color: #ff4d6d;
-    z-index: 10;
-}
-
-/* Make it look good on mobile */
-@media (max-width: 600px) {
-    .photo-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on phones */
-    }
-}/* This part ensures the page takes up the full screen and centers content */
+/* 1. RESET & CENTER EVERYTHING */
 body, html {
     margin: 0;
     padding: 0;
@@ -36,8 +8,7 @@ body, html {
     color: white;
     font-family: 'serif';
     overflow: hidden;
-    /* This centers the container itself */
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -51,32 +22,31 @@ body, html {
     position: relative;
 }
 
+/* 2. PAGE TRANSITIONS */
 .page {
     position: absolute;
-    /* These 3 lines are the secret to perfect centering */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.9); 
-    
+    transform: translate(-50%, -50%) scale(0.9);
     text-align: center;
     opacity: 0;
     transition: all 0.8s ease-in-out;
     pointer-events: none;
-    width: 80%; /* Keeps text from hitting screen edges */
+    width: 90%;
 }
 
-/* When a page is active, it stays centered and grows slightly */
 .page.active {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
     pointer-events: auto;
 }
 
+/* 3. TEXT & BUTTONS */
 .glow-text {
-    font-size: clamp(2rem, 8vw, 4rem); /* Responsive size: smaller on phones, bigger on PCs */
+    font-size: clamp(2rem, 7vw, 3.5rem);
     color: #ff4d6d;
-    text-shadow: 0 0 20px rgba(255, 77, 109, 0.6);
-    margin: 0 0 20px 0;
+    text-shadow: 0 0 15px rgba(255, 77, 109, 0.6);
+    margin-bottom: 20px;
 }
 
 button {
@@ -84,14 +54,41 @@ button {
     border: 2px solid #ff4d6d;
     color: #ff4d6d;
     padding: 12px 30px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     cursor: pointer;
     border-radius: 50px;
     transition: 0.3s;
+    text-transform: uppercase;
 }
 
 button:hover {
     background: #ff4d6d;
     color: white;
     box-shadow: 0 0 15px #ff4d6d;
+}
+
+/* 4. THE PHOTO GRID (Perfect for 4 Images) */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 85vw;
+    max-width: 350px;
+    margin: 20px auto;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #ff4d6d;
+}
+
+.message-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 77, 109, 0.2);
 }
