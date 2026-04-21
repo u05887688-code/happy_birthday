@@ -46,3 +46,6 @@ function createHeart() {
 
 // Start hearts as soon as the site loads
 setInterval(createHeart, 300);
+<script src="script.js"></script>
+</body>
+</html>
