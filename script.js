@@ -1,46 +1,30 @@
-// 1. Function to switch between pages
 function nextStep(stepNumber) {
-    // Hide all pages by removing 'active' class
+    console.log("Moving to step: " + stepNumber);
+    
+    // 1. Hide all sections
     const pages = document.querySelectorAll('.page');
-    pages.forEach(p => p.classList.remove('active'));
+    pages.forEach(page => {
+        page.classList.remove('active');
+        page.style.display = 'none'; // Force hide
+    });
 
-    // Show the target page
+    // 2. Show the target section
     const next = document.getElementById('step' + stepNumber);
     if (next) {
         next.classList.add('active');
+        next.style.display = 'block'; // Force show
+        console.log("Successfully showed step" + stepNumber);
+    } else {
+        console.error("Could not find element with ID: step" + stepNumber);
     }
 }
 
-// 2. Special function for the Music Screen
 function startMusic() {
     const audio = document.getElementById('birthdaySong');
     if (audio) {
-        // This 'plays' the jbl.mp3 file
-        audio.play().then(() => {
-            console.log("Music is playing!");
-        }).catch(err => {
-            console.log("Audio error: ", err);
-        });
+        audio.play().catch(err => console.log("Audio play blocked or failed:", err));
     }
-
-    // Automatically move to the next step (The Photos)
     nextStep(3);
 }
 
-// 3. Floating Hearts Animation (Extra Sparkle)
-function createHeart() {
-    const heart = document.createElement('div');
-    heart.classList.add('heart');
-    heart.innerHTML = '❤️';
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.animationDuration = Math.random() * 2 + 3 + 's';
-    
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 5000);
-}
-
-// Run the heart animation every 300ms
-setInterval(createHeart, 300);
+// Keep your heart animation below this if you want it
