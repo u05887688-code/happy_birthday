@@ -1,4 +1,3 @@
-
 // 1. Function to switch between pages
 function nextStep(stepNumber) {
     // Hide all pages by removing 'active' class
@@ -20,9 +19,10 @@ function startMusic() {
         audio.play().then(() => {
             console.log("Music is playing!");
         }).catch(err => {
-            console.log("Audio error:", err);
+            console.log("Audio error: ", err);
         });
     }
+
     // Automatically move to the next step (The Photos)
     nextStep(3);
 }
@@ -31,21 +31,16 @@ function startMusic() {
 function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
-    heart.innerHTML = '❤️'; // You can change this to 🎈 or ✨
+    heart.innerHTML = '❤️';
     heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.animationDuration = Math.random() * 3 + 2 + 's';
-    heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+    heart.style.animationDuration = Math.random() * 2 + 3 + 's';
     
     document.body.appendChild(heart);
 
-    // Remove heart after it floats away to keep the site fast
     setTimeout(() => {
         heart.remove();
     }, 5000);
 }
 
-// Start hearts as soon as the site loads
+// Run the heart animation every 300ms
 setInterval(createHeart, 300);
-<script src="script.js"></script>
-</body>
-</html>
