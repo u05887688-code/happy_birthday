@@ -1,24 +1,26 @@
 function startJourney() {
-    // Play the music
     const audio = document.getElementById('birthdaySong');
-    audio.play().catch(error => {
-        console.log("Autoplay blocked. Music will play after interaction.");
-    });
+    
+    // Attempt to play the music
+    if (audio) {
+        audio.volume = 1.0; // Ensure volume is up
+        audio.play().then(() => {
+            console.log("Playing jbl.mp3");
+        }).catch(e => {
+            console.log("Playback error. Make sure jbl.mp3 is in the main folder:", e);
+        });
+    }
 
-    // Move to the next screen
+    // Switch to the next page
     nextStep(2);
 }
 
 function nextStep(stepNumber) {
-    // Hide all pages
     const pages = document.querySelectorAll('.page');
-    pages.forEach(page => {
-        page.classList.remove('active');
-    });
+    pages.forEach(p => p.classList.remove('active'));
 
-    // Show selected page
-    const currentStep = document.getElementById('step' + stepNumber);
-    if (currentStep) {
-        currentStep.classList.add('active');
+    const next = document.getElementById('step' + stepNumber);
+    if (next) {
+        next.classList.add('active');
     }
 }
