@@ -59,3 +59,20 @@ button:hover {
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 77, 109, 0.3);
 }
+.heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    color: #ff4d6d;
+    user-select: none;
+    pointer-events: none;
+    animation: moveUp linear forwards;
+    z-index: -1;
+}
+
+@keyframes moveUp {
+    to {
+        transform: translateY(-105vh) rotate(360deg);
+        opacity: 0;
+    }
+}
