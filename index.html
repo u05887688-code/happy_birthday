@@ -1,44 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday jeevi</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<div class="container">
+    <section id="step1" class="page active">
+        <h1 class="glow-text">Happy Birthday, jeevi</h1>
+        <p>A cinematic journey created just for you</p>
+        <button onclick="nextStep(2)">OPEN YOUR GIFT</button>
+    </section>
 
-    <audio id="birthdaySong" loop>
-        <source src="jbl.mp3" type="audio/mpeg">
-    </audio>
+    <section id="step2" class="page">
+        <div class="card">
+            <h2>Music makes it better...</h2>
+            <button onclick="startMusic()">PLAY MUSIC</button>
+        </div>
+    </section>
 
-    <div class="container">
-        <section id="step1" class="page active">
-            <h1 class="glow-text">Happy Birthday, jeevi</h1>
-            <p>This for you click next....</p>
-            <button onclick="startJourney()">SHOW YOUR LOVE</button>
-        </section>
+    <section id="step3" class="page">
+        <h2 class="glow-text">Moments in Time</h2>
+        <div class="photo-grid">
+            <img src="img1.jpg">
+            <img src="img2.jpg">
+            <img src="img3.jpg">
+            <img src="img4.jpg">
+        </div>
+        <button onclick="nextStep(4)">CONTINUE</button>
+    </section>
 
-        <section id="step2" class="page">
-            <div class="card">
-                <h2>It's Your Special Day
-                I PRAY GOD TO FULLFILL YOUR DREMS and all drems come true, once agin happy birtday madamji... </h2>
-                <button onclick="nextStep(3)">NEXT</button>
-            </div>
-        </section>
-<section id="step3" class="page">
-    <h2 class="glow-text">Moments in Time</h2>
-    <div class="photo-grid">
-    <img src="img1.jpg">
-    <img src="img2.jpg">
-    <img src="img3.jpg">
-    <img src="img4.jpg">
-    </div>
-    <button onclick="nextStep(4)">CONTINUE</button>
-</section>
-        
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    <section id="step4" class="page">
+        <div class="message-box">
+            <h2>My Dearest jeevi,</h2>
+            <p>May your day be as beautiful as your smile, nin dream ella ev year success agli, once again happy birthday madamji.....</p>
+            <button onclick="location.reload()">REPLAY THE MAGIC</button>
+        </div>
+    </section>
+</div>
