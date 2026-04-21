@@ -1,18 +1,14 @@
-function startJourney() {
+function startMusic() {
     const audio = document.getElementById('birthdaySong');
-    
-    // Attempt to play the music
     if (audio) {
-        audio.volume = 1.0; // Ensure volume is up
         audio.play().then(() => {
-            console.log("Playing jbl.mp3");
-        }).catch(e => {
-            console.log("Playback error. Make sure jbl.mp3 is in the main folder:", e);
+            console.log("Music playing!");
+        }).catch(err => {
+            console.log("Error playing music:", err);
         });
     }
-
-    // Switch to the next page
-    nextStep(2);
+    // After starting music, move to the photo gallery
+    nextStep(3);
 }
 
 function nextStep(stepNumber) {
